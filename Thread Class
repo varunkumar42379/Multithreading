@@ -1,0 +1,15 @@
+package org.atyeti;
+
+public class MultiThreading extends Thread{
+    public static void main(String[] args) {
+
+        System.out.println("Main Thread: "+Thread.currentThread().getName());
+
+        MultiThreading t=new MultiThreading();
+        t.run();
+    }
+
+    public void run(){
+        System.out.println("Running Using Thread: "+Thread.currentThread().getName());
+    }
+}
