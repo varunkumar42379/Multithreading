@@ -1,0 +1,20 @@
+package org.atyeti;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class MultiThreading{
+    public static void main(String[] args) {
+
+
+        Runnable runnable= () -> System.out.println(Thread.currentThread().getName());
+
+        ExecutorService service= Executors.newFixedThreadPool(5);
+
+        for (int i=0;i<5;i++) {
+            service.submit(runnable);
+        }
+
+        service.shutdown();
+    }
+}
